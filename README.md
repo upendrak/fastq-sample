@@ -16,8 +16,16 @@ If two files are given, the input is treated as paired-end, and matching pairs a
 If you want to build it on your own
 
 ```
-$ docker build -t fastq-sample .
+$ docker build -t upendradevisetty/fastq-sample:0.8 .
 
+```
+
+### Push
+
+Push it to dockerhub. Please note that you need to have Dockerhub account for you to be able to push
+
+```
+$ docker push upendradevisetty/fastq-sample:0.8
 ```
 
 ### RUN
@@ -42,6 +50,17 @@ Sample random reads from a FASTQ file.Options:
   -V, --version           output version information and exit
 
 ```
+
+Sample run
+
+```
+$ docker run --rm -u $(id -u):$(id -g) -v $PWD:/data -w /data upendradevisetty/fastq-sample:0.8 -n 10 Read1.fastq
+
+```
+
+Outputs
+
+You will find `sample.fastq` output in your working directory with only 10 randomly selected reads
 
 AUTHOR
 Written by Daniel C. Jones <dcjones@cs.washington.edu>
