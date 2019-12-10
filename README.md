@@ -11,22 +11,6 @@ fastq-sample [OPTION]... FILE [FILE2]
 Given a FASTQ file, random reads are sampled and output, with or without replacement, according to the ’-r’ option. The number of reads to sample can be specifed with the ’-n’ option, or in terms of the proportion of total reads using ’-p’ option.
 If two files are given, the input is treated as paired-end, and matching pairs are sampled and output into seperate files: [prefix].1.fastq and [prefix].2.fastq, where [prefix] is set with the ’-o’ option.
 
-### Build
-
-If you want to build it on your own
-
-```
-$ docker build -t upendradevisetty/fastq-sample:0.8 .
-
-```
-
-### Push
-
-Push it to dockerhub. Please note that you need to have Dockerhub account for you to be able to push
-
-```
-$ docker push upendradevisetty/fastq-sample:0.8
-```
 
 ### RUN
 
@@ -55,7 +39,6 @@ Sample run
 
 ```
 $ docker run --rm -u $(id -u):$(id -g) -v $PWD:/data -w /data upendradevisetty/fastq-sample:0.8 -n 10 Read1.fastq
-
 ```
 
 Outputs
